@@ -13,6 +13,6 @@ app.get('/', (req, res) => {
 
 app.get('/api/products', productsController.getProducts)
 app.get('/api/products/:id', productsController.getOneProduct)
-// app.get('api/products', productsController.)
+// app.get('api/products', productsController.getProductPrice)
 
 app.listen(PORT, () => console.log(`listening to port ${PORT}`))

@@ -1,14 +1,14 @@
 const products = require('../products.json')
 
+//  product.price >= +req.query.price ? product : null be sure to remove {} on line 8 & 10
+// these are the same code, with and without a turnary. 
 module.exports = {
     getProducts: (req, res) => {
         if (req.query.price) {
             const filteredProductByPrice = products.filter(product => {
-            //  product.price >= +req.query.price ? product : null
-              // these are the same code, with and without a turnary. 
-               return product.price >= +req.query.price
+                return product.price >= +req.query.price
             })
-           res.status(200).send(filteredProductByPrice)
+            res.status(200).send(filteredProductByPrice)
         } else {
             res.status(200).send(products)
         }
